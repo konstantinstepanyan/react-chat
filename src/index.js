@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {createContext} from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import firebase from "firebase";
@@ -6,12 +6,9 @@ import 'firebase/firestore'
 import 'firebase/auth'
 
 
-export const Context = createContext(null);
 
-const auth = firebase.auth();
-const firestore = firebase.firestore();
 
-  firebase.initializeApp({
+firebase.initializeApp({
     apiKey: "AIzaSyBesn4OyQ_N8em_5YiwaHpqAl1EJlqHKYI",
     authDomain: "chat-react-1bfc1.firebaseapp.com",
     projectId: "chat-react-1bfc1",
@@ -20,6 +17,12 @@ const firestore = firebase.firestore();
     appId: "1:305343107467:web:33d74c80148aeb94f4df8e",
     measurementId: "G-90F4NWNRHB"
   });
+
+
+export const Context = createContext(null);
+
+const auth = firebase.auth();
+const firestore = firebase.firestore();
 
 ReactDOM.render(
   <React.StrictMode>
